@@ -188,10 +188,20 @@ function openArtwork(work) {
     viewerImageWrap.replaceChildren(imageFrame);
 
     currentViewerImage = imageFrame.querySelector(".artwork-image");
+
+    if (currentViewerImage) {
+        currentViewerImage.addEventListener(
+            "load",
+            sizeViewerToImage,
+            {once: true}
+        );
+
+        if (currentViewerImage.complete && currentViewerImage.naturalWidth > 0) {
+            sizeViewerToImage();
+        }
+    }
     viewer.style.removeProperty("width");
     viewer.style.removeProperty("--viewer-image-height");
-
-    sizeViewerToImage();
 
     viewerAuthor.textContent = work.author;
     viewerSocials.replaceChildren();
