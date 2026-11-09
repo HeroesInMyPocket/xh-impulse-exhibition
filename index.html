@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07070d">
+    <title>XH IMPULSE EXHIBITION</title>
+    <link rel="icon" href="images/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body class="is-locked">
+<div class="star-field" aria-hidden="true">
+    <span class="star star--1"></span>
+    <span class="star star--2"></span>
+    <span class="star star--3"></span>
+    <span class="star star--4"></span>
+    <span class="star star--5"></span>
+    <span class="star star--6"></span>
+    <span class="star star--7"></span>
+    <span class="star star--8"></span>
+    <span class="star star--9"></span>
+    <span class="star star--10"></span>
+</div>
+<section class="intro" id="intro">
+    <div class="intro__curtain intro__curtain--left" aria-hidden="true"></div>
+    <div class="intro__curtain intro__curtain--right" aria-hidden="true"></div>
+
+    <div class="intro__content">
+        <p class="eyebrow intro__eyebrow">ОНЛАЙН-ВЫСТАВКА</p>
+        <h1 class="intro__title">IMPULSE</h1>
+        <span id="enter">НАЖМИТЕ НА ЭКРАН</span>
+    </div>
+</section>
+
+<div class="site-shell" id="site-shell" aria-hidden="true">
+    <main id="top">
+        <section class="exhibition-intro" aria-labelledby="gallery-heading">
+            <div>
+                <h2 id="gallery-heading">«Останься здесь еще <em>ненадолго,</em> даже если будешь бесчисленное
+                    количество раз сомневаться и получать раны».</h2>
+                <p class="exhibition-intro__description">Здесь собраны все работы участников нашего флэшмоба,
+                    проходившего с 28 сентября по 31 октября 2026 года.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-grid" id="gallery-grid"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Ивент канала <a href="https://t.me/HeroesInMyPocket" target="_blank" rel="noopener noreferrer">@HeroesInMyPocket</a>
+        </p>
+        <p>2026</p>
+    </footer>
+</div>
+
+<dialog class="viewer" id="artwork-viewer" aria-label="Просмотр работы">
+    <button class="viewer__close" id="viewer-close" type="button" aria-label="Закрыть просмотр">×</button>
+    <div class="viewer__image-wrap" id="viewer-image-wrap"></div>
+    <div class="viewer__caption">
+        <span class="viewer__author" id="viewer-author"></span>
+        <div class="social-links" id="viewer-socials"></div>
+    </div>
+</dialog>
+</body>
+</html>
