@@ -227,16 +227,21 @@ function closeArtwork() {
 }
 
 function openExhibition() {
+    if (intro.classList.contains("is-opening") || intro.hidden) return;
+
     intro.inert = true;
     intro.setAttribute("aria-hidden", "true");
 
     intro.classList.add("is-opening");
     siteShell.setAttribute("aria-hidden", "false");
+
     document.body.classList.add("has-entered");
     document.body.classList.remove("is-locked");
 
-    intro.hidden = true;
-    window.scrollTo({top: 0, behavior: "auto"});
+    setTimeout(() => {
+        intro.hidden = true;
+        window.scrollTo({top: 0, behavior: "auto"});
+    }, 1500);
 }
 
 window.addEventListener("resize", sizeViewerToImage);
