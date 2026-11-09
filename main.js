@@ -123,7 +123,21 @@ function createArtworkCard(work) {
 
     const artworkFrame = createArtworkImage(work);
     const thumbnail = artworkFrame.querySelector(".artwork-image");
-    imageButton.style.aspectRatio = `${thumbnail.naturalWidth} / ${thumbnail.naturalHeight}`;
+
+    if (thumbnail) {
+        const setRatio = () => {
+            if (thumbnail.naturalWidth && thumbnail.naturalHeight) {
+                imageButton.style.aspectRatio =
+                    `${thumbnail.naturalWidth} / ${thumbnail.naturalHeight}`;
+            }
+        };
+
+        thumbnail.addEventListener("load", setRatio, {once: true});
+
+        if (thumbnail.complete && thumbnail.naturalWidth > 0) {
+            setRatio();
+        }
+    }
     imageButton.append(artworkFrame);
     imageButton.addEventListener("click", () => openArtwork(work));
 
